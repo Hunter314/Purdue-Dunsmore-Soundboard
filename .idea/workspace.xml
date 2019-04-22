@@ -7,13 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a3b885cc-f9ad-4104-ab1e-c051ad9261da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/._bxd.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Buster_Dunsmore_Soundboard_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Buster_Dunsmore_Soundboard_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Releases/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buster Dunsmore Soundboard/soundBoard$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buster Dunsmore Soundboard/soundBoard$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Buster Dunsmore Soundboard/soundBoard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Buster Dunsmore Soundboard/soundBoard.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Buster Dunsmore Soundboard.eml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Releases/._DunsmoreSoundboard_ver1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Releases/DunsmoreSoundboard_ver1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Soundboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soundboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sounds/INTEGER.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sounds/bark.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sounds/blululululu.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sounds/geek.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sounds/int.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sounds/meow.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/bxd.png" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,11 +38,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Soundboard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+            <state relative-caret-position="259">
+              <caret line="46" column="46" lean-forward="true" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2722#2723#0" expanded="true" />
+                <element signature="e#2684#2685#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,11 +88,6 @@
               <item name="Buster Dunsmore Soundboard" type="b2602c69:ProjectViewProjectNode" />
               <item name="Buster Dunsmore Soundboard" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Buster Dunsmore Soundboard" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Buster Dunsmore Soundboard" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -95,7 +98,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555906200088" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555906786067" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -156,12 +159,12 @@
       <workItem from="1555263348918" duration="8053000" />
       <workItem from="1555288880874" duration="2232000" />
       <workItem from="1555523859506" duration="7000" />
-      <workItem from="1555894169530" duration="8949000" />
+      <workItem from="1555894169530" duration="9454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19241000" />
+    <option name="totallyTimeSpent" value="19746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="6" />
@@ -218,11 +221,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Soundboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="36" column="21" lean-forward="true" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
+        <state relative-caret-position="259">
+          <caret line="46" column="46" lean-forward="true" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2722#2723#0" expanded="true" />
+            <element signature="e#2684#2685#0" expanded="true" />
           </folding>
         </state>
       </provider>

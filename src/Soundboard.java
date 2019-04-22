@@ -47,7 +47,7 @@ public class Soundboard {
     private static void addImageToFrame(JFrame jf, String fileName) {
         try {
             jf.setContentPane(new JPanel() {
-                BufferedImage image = ImageIO.read(Soundboard.class.getResourceAsStream("images/"+fileName));
+                BufferedImage image = ImageIO.read(new File(fileName));
 
                 public void paintComponent(Graphics g) {
                     super.paintComponent(g);
