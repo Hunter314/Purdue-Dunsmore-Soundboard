@@ -1,7 +1,6 @@
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -71,22 +70,22 @@ public class Soundboard {
     private static void aboutWindow() {
         JOptionPane.showMessageDialog(null,
                 "This project was designed " +
-                "\nas a thank-you of sorts" +
-                "\nto the CS180 Staff. " +
-                "\nIt was designed, programmed, and " +
-                "\ndocumented by Kedar Abhyankar. " +
-                "\nThank you CS180 Staff!" +
-                "\n\n\n" +
-                "If you're interested in" +
-                "\nadding to this project" +
-                "\nfork this project from" +
-                "\nmy GitHub repository!" +
-                "\nhttps://git.io/fj3Ic" +
-                "\n\n"+
-                "\nOr, if you have any questions,"+
-                "\nYou can reach out to me through" +
-                "\nthe contact links on my website." +
-                "\nhttps://kedarabhyankar.me", "About", JOptionPane.PLAIN_MESSAGE);
+                        "\nas a thank-you of sorts" +
+                        "\nto the CS180 Staff. " +
+                        "\nIt was designed, programmed, and " +
+                        "\ndocumented by Kedar Abhyankar. " +
+                        "\nThank you CS180 Staff!" +
+                        "\n\n\n" +
+                        "If you're interested in" +
+                        "\nadding to this project" +
+                        "\nfork this project from" +
+                        "\nmy GitHub repository!" +
+                        "\nhttps://git.io/fj3Ic" +
+                        "\n\n" +
+                        "\nOr, if you have any questions," +
+                        "\nYou can reach out to me through" +
+                        "\nthe contact links on my website." +
+                        "\nhttps://kedarabhyankar.me", "About", JOptionPane.PLAIN_MESSAGE);
     }
 
     private static void playSound(String fileName) {
