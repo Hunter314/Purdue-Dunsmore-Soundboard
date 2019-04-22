@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Random;
 
-public class soundBoard {
+public class Soundboard {
 
 
     private static JFrame frame;
@@ -79,8 +79,9 @@ public class soundBoard {
                 e.printStackTrace();
             }
         } else {
-            JOptionPane.showMessageDialog(null, "FILE DOES NOT EXIST!", "FATAL ERROR!",
-                    JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "The file doesn't exist. Perhaps you placed" +
+                            "the file in the wrong directory?", "Warning",
+                    JOptionPane.WARNING_MESSAGE);
         }
     }
 
@@ -122,7 +123,7 @@ public class soundBoard {
         bigInteger.setVisible(true);
         bigInteger.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
 
-        geekedOut = new JBUtton("Geeked Out");
+        geekedOut = new JButton("Geeked Out");
         geekedOut.setVisible(true);
         geekedOut.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
     }
