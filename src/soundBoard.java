@@ -1,32 +1,32 @@
 import javax.imageio.ImageIO;
-import javax.print.attribute.standard.Media;
 import javax.sound.sampled.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.net.URL;
 import java.util.Random;
 
 public class soundBoard {
 
 
     private static JFrame frame;
-    private static JPanel buttonPanel;
     private static JButton meow;
     private static JButton bark;
     private static JButton disposeFrame;
     private static JButton smallInteger;
     private static JButton bigInteger;
+    private static JButton geekedOut;
 
     public static void main(String[] args) {
+        int num = 34;
+        System.out.println(num/3);
         frame = new JFrame("Purdue University Professor Dunsmore Soundboard");
         addImageToFrame(frame, "bxd.png");
         setupFrame(frame);
         initButtons();
         setButtonsInFrame();
+        frame.pack();
         initActionListeners();
-
     }
 
     private static void addImageToFrame(JFrame jf, String fileName) {
@@ -49,7 +49,7 @@ public class soundBoard {
     }
 
     private static void barkSound() {
-        playSound("Sounds/bork.wav");
+        playSound("Sounds/bark.wav");
     }
 
     private static void disposeFrameSound() {
@@ -64,6 +64,10 @@ public class soundBoard {
         playSound("Sounds/INTEGER.wav");
     }
 
+    private static void geekedOutSound(){
+        playSound("Sounds/geek.wav");
+    }
+
     private static void playSound(String fileName) {
         File file = new File(fileName);
         if (file.exists()) {
@@ -74,7 +78,6 @@ public class soundBoard {
             } catch (UnsupportedAudioFileException | LineUnavailableException | IOException e) {
                 e.printStackTrace();
             }
-
         } else {
             JOptionPane.showMessageDialog(null, "FILE DOES NOT EXIST!", "FATAL ERROR!",
                     JOptionPane.ERROR_MESSAGE);
@@ -83,40 +86,45 @@ public class soundBoard {
 
     private static void setupFrame(JFrame frame) {
         frame.setResizable(false);
-        frame.setLayout(new GridLayout());
+        frame.setLayout(new FlowLayout());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(new Dimension(480, 640));
+        frame.validate();
+        frame.setPreferredSize(new Dimension(480,640));
+        System.out.println(frame.isPreferredSizeSet());
         frame.setVisible(true);
+        frame.pack();
     }
 
     private static void initButtons() {
 
-        float[] colors = randomBorderColors();
+        float[] colors;
+        final int BUTTON_WIDTH = 80;
+        final int BUTTON_HEIGHT = 60;
+
         meow = new JButton("Meow");
-        meow.setBorder(BorderFactory.createLineBorder(new Color(colors[0], colors[1], colors[2])));
-        meow.setSize(new Dimension(40, 60));
+        meow.setVisible(true);
+        meow.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
 
-        colors = randomBorderColors();
         bark = new JButton("Bark");
-        bark.setBorder(BorderFactory.createLineBorder(new Color(colors[0], colors[1], colors[2])));
-        bark.setSize(new Dimension(40, 60));
+        bark.setVisible(true);
+        bark.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
 
-        colors = randomBorderColors();
-        disposeFrame = new JButton("Bluhluhluh");
-        disposeFrame.setBorder(BorderFactory.createLineBorder(new Color(colors[0], colors[1], colors[2])));
-        disposeFrame.setSize(new Dimension(40, 60));
+        disposeFrame = new JButton("Disposal of Frame");
+        disposeFrame.setVisible(true);
+        disposeFrame.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
 
-        colors = randomBorderColors();
         smallInteger = new JButton("int");
-        smallInteger.setBorder(BorderFactory.createLineBorder(new Color(colors[0], colors[1], colors[2])));
-        smallInteger.setSize(new Dimension(40, 60));
+        smallInteger.setVisible(true);
+        smallInteger.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
 
-        colors = randomBorderColors();
         bigInteger = new JButton("INTEGER");
-        bigInteger.setBorder(BorderFactory.createLineBorder(new Color(colors[0], colors[1], colors[2])));
-        bigInteger.setSize(new Dimension(40, 60));
+        bigInteger.setVisible(true);
+        bigInteger.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
 
+        geekedOut = new JBUtton("Geeked Out");
+        geekedOut.setVisible(true);
+        geekedOut.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
     }
 
     private static void initActionListeners() {
@@ -139,18 +147,24 @@ public class soundBoard {
         bigInteger.addActionListener(ActionListener -> {
             bigIntegerSound();
         });
+
+        geekedOut.addActionListener(ActionListener -> {
+            geekedOutSound();
+        });
+
+
     }
 
     private static void setButtonsInFrame() {
-        frame.setLayout(new FlowLayout());
-        frame.add(meow, BorderLayout.CENTER);
-        frame.add(bark, BorderLayout.SOUTH);
-        frame.add(smallInteger, BorderLayout.SOUTH);
-        frame.add(bigInteger, BorderLayout.SOUTH);
-        frame.add(disposeFrame, BorderLayout.SOUTH);
+        frame.add(meow);
+        frame.add(bark);
+        frame.add(smallInteger);
+        frame.add(bigInteger);
+        frame.add(disposeFrame);
+        frame.add(geekedOut);
     }
 
-    private static float[] randomBorderColors() {
+    private static float[] randomColors() {
         Random rand = new Random();
         float r = rand.nextFloat();
         float g = rand.nextFloat();
