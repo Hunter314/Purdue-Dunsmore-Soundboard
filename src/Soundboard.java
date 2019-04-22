@@ -1,6 +1,7 @@
 import javax.imageio.ImageIO;
 import javax.sound.sampled.*;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -16,10 +17,9 @@ public class Soundboard {
     private static JButton smallInteger;
     private static JButton bigInteger;
     private static JButton geekedOut;
+    private static JButton about;
 
     public static void main(String[] args) {
-        int num = 34;
-        System.out.println(num/3);
         frame = new JFrame("Purdue University Professor Dunsmore Soundboard");
         addImageToFrame(frame, "bxd.png");
         setupFrame(frame);
@@ -31,12 +31,12 @@ public class Soundboard {
 
     private static void addImageToFrame(JFrame jf, String fileName) {
         try {
-            frame.setContentPane(new JPanel() {
+            jf.setContentPane(new JPanel() {
                 BufferedImage image = ImageIO.read(new File(fileName));
 
                 public void paintComponent(Graphics g) {
                     super.paintComponent(g);
-                    g.drawImage(image, 0, 0, frame.getWidth(), frame.getHeight(), this);
+                    g.drawImage(image, 0, 0, jf.getWidth(), jf.getHeight(), this);
                 }
             });
         } catch (IOException e) {
@@ -64,8 +64,29 @@ public class Soundboard {
         playSound("Sounds/INTEGER.wav");
     }
 
-    private static void geekedOutSound(){
+    private static void geekedOutSound() {
         playSound("Sounds/geek.wav");
+    }
+
+    private static void aboutWindow() {
+        JOptionPane.showMessageDialog(null,
+                "This project was designed " +
+                "\nas a thank-you of sorts" +
+                "\nto the CS180 Staff. " +
+                "\nIt was designed, programmed, and " +
+                "\ndocumented by Kedar Abhyankar. " +
+                "\nThank you CS180 Staff!" +
+                "\n\n\n" +
+                "If you're interested in" +
+                "\nadding to this project" +
+                "\nfork this project from" +
+                "\nmy GitHub repository!" +
+                "\nhttps://git.io/fj3Ic" +
+                "\n\n"+
+                "\nOr, if you have any questions,"+
+                "\nYou can reach out to me through" +
+                "\nthe contact links on my website." +
+                "\nhttps://kedarabhyankar.me", "About", JOptionPane.PLAIN_MESSAGE);
     }
 
     private static void playSound(String fileName) {
@@ -89,12 +110,16 @@ public class Soundboard {
         frame.setResizable(false);
         frame.setLayout(new FlowLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
         frame.validate();
-        frame.setPreferredSize(new Dimension(480,640));
+        frame.setPreferredSize(new Dimension(480, 640));
         System.out.println(frame.isPreferredSizeSet());
         frame.setVisible(true);
         frame.pack();
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        Point middle = new Point(screenSize.width / 2, screenSize.height / 2);
+        Point newLocation = new Point(middle.x - (frame.getWidth() / 2),
+                middle.y - (frame.getHeight() / 2));
+        frame.setLocation(newLocation);
     }
 
     private static void initButtons() {
@@ -126,6 +151,10 @@ public class Soundboard {
         geekedOut = new JButton("Geeked Out");
         geekedOut.setVisible(true);
         geekedOut.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
+
+        about = new JButton("About");
+        about.setVisible(true);
+        about.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
     }
 
     private static void initActionListeners() {
@@ -153,7 +182,9 @@ public class Soundboard {
             geekedOutSound();
         });
 
-
+        about.addActionListener(ActionListener -> {
+            aboutWindow();
+        });
     }
 
     private static void setButtonsInFrame() {
@@ -163,6 +194,7 @@ public class Soundboard {
         frame.add(bigInteger);
         frame.add(disposeFrame);
         frame.add(geekedOut);
+        frame.add(about);
     }
 
     private static float[] randomColors() {
@@ -176,7 +208,6 @@ public class Soundboard {
         colors[2] = b;
         return colors;
     }
-
 
 
 }
