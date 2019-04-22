@@ -17,9 +17,8 @@ import java.util.Random;
  * https://kedarabhyankar.me
  * https://github.com/kedarabhyankar
  */
+
 public class Soundboard {
-
-
     private static JFrame frame;
     private static JButton meow;
     private static JButton bark;
@@ -48,7 +47,7 @@ public class Soundboard {
     private static void addImageToFrame(JFrame jf, String fileName) {
         try {
             jf.setContentPane(new JPanel() {
-                BufferedImage image = ImageIO.read(new File(fileName));
+                BufferedImage image = ImageIO.read(Soundboard.class.getResourceAsStream("images/"+fileName));
 
                 public void paintComponent(Graphics g) {
                     super.paintComponent(g);
@@ -132,7 +131,7 @@ public class Soundboard {
             }
         } else {
             JOptionPane.showMessageDialog(null, "The file doesn't exist. Perhaps you placed" +
-                            "the file in the wrong directory?", "Warning",
+                            " the file in the wrong directory?", "Warning",
                     JOptionPane.WARNING_MESSAGE);
         }
     }
