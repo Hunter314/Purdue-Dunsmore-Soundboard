@@ -6,6 +6,17 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Random;
 
+/**
+ * Professor Dunsmore Soundboard
+ *
+ * A creative project done for humorous purposes, by Kedar Abhyankar
+ *
+ * @author kedarabhyankar
+ * @version 1.0
+ *
+ * https://kedarabhyankar.me
+ * https://github.com/kedarabhyankar
+ */
 public class Soundboard {
 
 
@@ -28,6 +39,12 @@ public class Soundboard {
         initActionListeners();
     }
 
+    /**
+     * This method displays an image held in the content pane of the JFrame.
+     * @param jf the JFrame in which to display an image to.
+     * @param fileName the fileName as to what image is being shown. All files must be in the Portable Network
+     *                 Graphics format (.png), and must be within the boundaries of the screen size.
+     */
     private static void addImageToFrame(JFrame jf, String fileName) {
         try {
             jf.setContentPane(new JPanel() {
@@ -43,6 +60,11 @@ public class Soundboard {
         }
     }
 
+    /**
+     * The methods listed below each contain calls to the playSound() method, where it will play the
+     * corresponding sound file. These methods are called when the ActionListener of each respective
+     * JButton is 'tripped'.
+     */
     private static void meowSound() {
         playSound("Sounds/meow.wav");
     }
@@ -67,6 +89,9 @@ public class Soundboard {
         playSound("Sounds/geek.wav");
     }
 
+    /**
+     * The aboutWindow() method simply shows a JOptionPane with info about this project's creator, Kedar Abhyankar.
+     */
     private static void aboutWindow() {
         JOptionPane.showMessageDialog(null,
                 "This project was designed " +
@@ -88,6 +113,13 @@ public class Soundboard {
                         "\nhttps://kedarabhyankar.me", "About", JOptionPane.PLAIN_MESSAGE);
     }
 
+    /**
+     * The playSound() method takes in a parameter of String filename, which corresponds to the name of the sound
+     * file that the program can play. All sounds MUST be in .wav format, due to the specifications laid out by the
+     * Clip class. If the file doesn't exist, a warning message will be shown. The program WILL NOT shut down if
+     * the button results in an error message.
+     * @param fileName The name of the song file to play.
+     */
     private static void playSound(String fileName) {
         File file = new File(fileName);
         if (file.exists()) {
@@ -105,13 +137,17 @@ public class Soundboard {
         }
     }
 
+    /**
+     * The setupFrame(JFrame frame) method sets up the JFrame, and its specific settings. It is setup to
+     * be run in a FlowLayout, in a non resizable 480 by 640 size window, centered on screen.
+     * @param frame The JFrame that we are applying these parameters to.
+     */
     private static void setupFrame(JFrame frame) {
         frame.setResizable(false);
         frame.setLayout(new FlowLayout());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.validate();
         frame.setPreferredSize(new Dimension(480, 640));
-        System.out.println(frame.isPreferredSizeSet());
         frame.setVisible(true);
         frame.pack();
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -121,9 +157,12 @@ public class Soundboard {
         frame.setLocation(newLocation);
     }
 
+    /**
+     * The initButtons() method handles the instantiation, visibility, and bounding boxes of the JButtons used through
+     * out this program. Each button is set to the same dimensions, of BUTTON_WIDTH and BUTTON_HEIGHT.
+     */
     private static void initButtons() {
 
-        float[] colors;
         final int BUTTON_WIDTH = 80;
         final int BUTTON_HEIGHT = 60;
 
@@ -156,6 +195,11 @@ public class Soundboard {
         about.setBounds(new Rectangle(BUTTON_WIDTH, BUTTON_HEIGHT));
     }
 
+    /**
+     * The initActionListeners() method handles the creation and functionality of each button's ActionListener. Each
+     * button has an ActionListener added to it, and if the ActionListener is 'tripped', then the corresponding
+     * method will be run.
+     */
     private static void initActionListeners() {
         meow.addActionListener(ActionListener -> {
             meowSound();
@@ -186,6 +230,9 @@ public class Soundboard {
         });
     }
 
+    /**
+     * The setButtonsInFrame() method adds every button used in this program to the JFrame object, frame.
+     */
     private static void setButtonsInFrame() {
         frame.add(meow);
         frame.add(bark);
@@ -196,6 +243,13 @@ public class Soundboard {
         frame.add(about);
     }
 
+    /**
+     * The randomColors() method utilizes a Random object in order to generate a series of three floating point
+     * numbers, each corresponding to a certain color spectrum in the RGB colorspace. The three values are
+     * saved to a floating point number array, and then that array is returned.
+     *
+     * @return a floating point array containing a random rgb Color value.
+     */
     private static float[] randomColors() {
         Random rand = new Random();
         float r = rand.nextFloat();
